@@ -69,7 +69,7 @@ public class EmployeeProcess {
 		int counter = 0;
 		
 		for (int i = 0; i < list.size(); i++){
-			if (list.get(i).getName().equalsIgnoreCase(name)) {
+			if (list.get(i).getName().toLowerCase().contains(name)) {
 				
 				System.out.println("\tMatch: "+(counter+1));
 				System.out.println("\t|ID|-|Name|-|Age|-|Position|-|Salary|");	
@@ -117,7 +117,7 @@ public class EmployeeProcess {
 			
 			if(!file.exists()){
 				
-				System.out.println("\tCreating a new file right now...");
+				System.out.println("\tCreating a new file...");
 				file.createNewFile();
 			}
 			

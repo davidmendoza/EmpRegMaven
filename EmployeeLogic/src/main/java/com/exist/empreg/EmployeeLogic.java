@@ -101,7 +101,7 @@ public class EmployeeLogic {
 					age = sc.nextInt();
 					
 					System.out.print("\tEnter position --> ");
-					position = sc2.next();
+					position = sc2.nextLine();
 					
 					System.out.print("\tEnter salary --> ");
 					
@@ -166,9 +166,9 @@ public class EmployeeLogic {
 				
 				case 2:
 					System.out.print("\tEnter name --> ");
-					name = sc2.next();
+					name = sc2.nextLine();
 					System.out.print("\n");
-					found = empProcess.searchByName(name);
+					found = empProcess.searchByName(name.toLowerCase());
 					
 					if(!found){
 						System.out.println("\tEmployee not found");
