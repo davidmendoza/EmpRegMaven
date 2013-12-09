@@ -117,7 +117,7 @@ public class EmployeeProcess {
 			
 			if(!file.exists()){
 				
-				System.out.println("\tCreating a new file now...");
+				System.out.println("\tCreating a new file right now...");
 				file.createNewFile();
 			}
 			
