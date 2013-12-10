@@ -1,5 +1,6 @@
 package com.exist.empreg;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -28,9 +29,17 @@ public class EmployeeProcess {
 		System.out.println("\n\t|ID|-|Name|-|Age|-|Position|-|Salary|\n");
 		
 		if (choice == 1) {
-		Collections.sort(list, new IdComparator());
+		Collections.sort(list, new Comparator<Employee>() {
+			public int compare(Employee a, Employee b){
+				return a.getId() - b.getId();
+			};
+		});
 		} else {
-			Collections.sort(list, new Employee());
+			Collections.sort(list, new Comparator<Employee>() {
+				public int compare(Employee a, Employee b) {
+					return a.getName().compareToIgnoreCase(b.getName());
+				};
+			});
 		}
 		
 		for (Employee emp: list){

@@ -1,8 +1,6 @@
 package com.exist.empreg;
 
-import java.util.Comparator;
-
-public class Employee implements Comparator<Employee> {
+public class Employee {
 	
 	private String name;
 	private String position;
@@ -60,11 +58,6 @@ public class Employee implements Comparator<Employee> {
 	
 	public float getSalary(){
 		return this.salary;
-	}
-	
-	@Override
-	public int compare(Employee a, Employee b){
-		return a.name.compareToIgnoreCase(b.name);
 	}
 	
 	
