@@ -58,9 +58,33 @@ public class EmployeeLogic {
 	}
 	
 	public void viewEmp(){
+		
+		int choice;
+		Scanner sc = new Scanner(System.in);
+		
 		if (empProcess.getMapSize() > 0) {
 			System.out.println("\n\tView all Employees");
-			empProcess.view();
+			System.out.print("\tView by [1]ID [2]Name");
+			System.out.print(" --> ");
+			
+			while (!sc.hasNextInt()){
+				System.out.print("\tPlease enter a valid number --> ");
+				sc.next();
+			}
+			choice = sc.nextInt();
+			
+			switch (choice) {
+				case 1:
+					empProcess.view(choice);
+				break;
+				
+				case 2:
+					empProcess.view(choice);
+				break;
+				
+				default:
+				break;
+			}
 		} else {
 			System.out.println("\n\tNo Employees Registered");
 		}

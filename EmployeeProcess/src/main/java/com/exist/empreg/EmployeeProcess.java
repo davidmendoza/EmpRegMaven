@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
@@ -21,10 +22,16 @@ public class EmployeeProcess {
 		System.out.println("\tEmployee "+name+" added");
 	}
 	
-	public void view(){
+	public void view(int choice){
 
 		List<Employee> list = new ArrayList<Employee>(empMap.values());
-		System.out.println("\t|ID|-|Name|-|Age|-|Position|-|Salary|\n");
+		System.out.println("\n\t|ID|-|Name|-|Age|-|Position|-|Salary|\n");
+		
+		if (choice == 1) {
+		Collections.sort(list, new IdComparator());
+		} else {
+			Collections.sort(list, new Employee());
+		}
 		
 		for (Employee emp: list){
 			System.out.print("\t| "+emp.getId()+" |");
